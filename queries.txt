@@ -1,0 +1,280 @@
+SELECT * FROM "po" "poAlias" 
+INNER JOIN "poitem" "poitemAlias"  ON  "poAlias"."po-num" = "poitemAlias"."po-num"  
+INNER JOIN "vendor" "vAlias"  ON  "poAlias"."vend-num" = "vAlias"."vend-num"  
+INNER JOIN "item" "iAlias"  ON  "poitemAlias"."item" = "iAlias"."item"   
+INNER JOIN "shipto" "sAlias"  ON  "poitemAlias"."drop-ship-no" = "sAlias"."drop-ship-no" and "poAlias"."drop-ship-no" = "sAlias"."drop-ship-no" 
+INNER JOIN "po-div" "podAlias"  ON  "podAlias"."po-num" = "poAlias"."po-num" 
+INNER JOIN "vendor-div" "vdAlias"  ON  "vdAlias"."vend-num" = "vAlias"."vend-num"  
+INNER JOIN "item-div" "idAlias"  ON  "idAlias"."item" = "iAlias"."item" 
+INNER JOIN "vendaddr" "vaAlias"  ON  "vaAlias"."vend-num" = "vAlias"."vend-num"  
+WHERE "poAlias"."order-date" >=  '2013-05-03' ;	 
+
+
+
+java -jar target/accounts-core-service-1.0.0-SNAPSHOT.jar
+java -jar target/accounts-composite-service-1.0.0-SNAPSHOT.jar 
+java -jar target/manage-po-core-service-1.0.0-SNAPSHOT.jar
+java -jar target/manage-po-api-service-1.0.0-SNAPSHOT.jar 
+psql -h ec2-23-21-166-16.compute-1.amazonaws.com -p 5432  -U ysvgldxcexzbid dc4tst5151mkib < C:\Apigee\backup.sql 
+
+{"poIds":["1","9"]} 
+
+processPoData: 
+{"poNums":["3710536","3711982"]} 
+
+API: http://m2241383:8181/pullPoData/:
+{"firstSearch":true} 
+
+Core:http://m2241383:8080/pullPoData
+{"firstSearch":true} 
+
+
+http://m2241383:8181/pullPoData
+{"firstSearch":true} 
+
+
+
+
+
+git add .
+git commit -m "UI and update   changes"
+git push origin master 
+
+git push heroku master
+heroku open
+heroku logs -t 
+git push heroku master
+heroku create
+
+git remote -v for checking the reposotory
+heroku open 
+..........................................................................
+
+steps
+1.heroku login
+amitjava535@gmail.com
+
+ u can crate heroku app from heroku dashboard also.
+2.heroku create
+3.for rename purpose
+example 
+
+heroku apps:rename java-getting-started-master  --app infinite-crag-22654 
+heroku apps:rename heroku-eureka-client-demo  --app infinite-crag-22654 
+heroku apps:rename heroku-eureka-client-demo-master  --app fathomless-oasis-53923
+heroku apps:rename file1234 --app      sheltered-brook-89331
+
+
+4.
+create new reposiorty in git by website
+
+git init
+git add .
+
+
+5.git commit -m "UI and update   changes"
+
+if needed then set the 
+
+set HTTPS_PROXY=http://cyadava7:Test1!@10.10.5.18:8080
+set HTTP_PROXY=http://cyadava7:Test1!@10.10.5.18:8080 
+
+
+
+6. git push origin master 
+or 
+git remote add origin https://github.com/amitjava535/heroku-eureka-server-demo2.git
+git remote add origin https://github.com/amitjava535/devcenter-java-web-worker.git
+
+7.git push -u origin master
+
+
+username
+password
+
+7.git push heroku master
+
+or if fatal error comes
+
+heroku git:remote -a springmvcexample2
+heroku git:remote -a springlocale
+heroku git:remote -a discovery-server-master
+heroku git:remote -a multiamit1
+
+8.git push heroku master
+
+9.heroku open
+
+
+note .we have set EUREKA_USER_PASSWORD in server side.from herocu dash board.
+..........
+
+
+Note - heroku all commands will run modem
+
+ 
+ and apart form this all will run from system internet
+    
+
+..........................................................................
+
+Eureka Server: 
+heroku config:set EUREKA_USER_PASSWORD=password 
+Client: 
+heroku config:set EUREKA_URL=https://sunil.kumar.soni@jci.com:Password1!@manage-po-core-service.herokuapp.com
+
+heroku config:set DOMAIN_NAME="manage-po-core-service.herokuapp.com"
+
+git push heroku master 
+
+[http]
+    proxy = http://csonisk:Password1!@10.10.5.18:8080
+
+[https]
+    proxy =  https://csonisk:Password1!10.10.5.18:8080 
+	
+	
+	
+	...............................................................................................
+	all will set in heroko 
+	EUREKA_USER_PASSWORD server
+	heroku config:set EUREKA_USER_PASSWORD=Test1!
+	heroku config:set EUREKA_USER_PASSWORD=Test1!
+	EUREKA_URL  https://user:Test1!@thawing-tor-72751.herokuapp.com client
+	EUREKA_URL  https://user:Test1!@herokueurekaclient.herokuapp.com client
+	heroku config:set EUREKA_URL=https://user:Test1!@<serverappname>.herokuapp.com
+	heroku config:set DOMAIN_NAME="herokueurekaclient.herokuapp.com"
+	heroku config:set EUREKA_URL=https://user:Test1!@herokueurekaclient.herokuapp.com
+	 heroku config:set DOMAIN_NAME="herokueurekaclient10.herokuapp.com" client
+	 heroku config:set DOMAIN_NAME="<clientappname>.herokuapp.com" client
+	 heroku config:set DOMAIN_NAME="multiamit1.herokuapp.com" client
+	
+	..............................................................................
+	
+	https://blog.heroku.com/archives/2015/3/3/managing_your_microservices_on_heroku_with_netflix_s_eureka 
+	
+	
+	..........................................................................................................................................
+	
+client-	arcane-headland-73009
+server- whispering-shelf-88719
+
+
+....................................................................................................
+
+date 5 may 2016
+
+https://github.com/Netflix/eureka/wiki
+https://github.com/Netflix/Hystrix/wiki
+https://github.com/Netflix/ribbon/wiki 
+https://github.com/Netflix/zuul 
+
+http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords 
+
+
+
+note
+
+
+
+ app -pacific-island-88283
+ 
+ 
+ 
+ boiling-plateau-66513
+ guarded-springs-38942
+ 
+ 
+ client app- morning-hollows-98723
+ 
+ ..............................................................................................................................
+ Eureka-These include Eureka for service discovery
+  Hystrix for handling service failure
+  Ribbon for client side load balancing, and many others.
+
+  .......................................................
+  
+ http://academy.apigee.com/courses/elearning 
+ 
+ ........................................................................................
+ 
+ 9may 2916
+ https://github.com/kennyk65/Microservices-With-Spring-Student-Files 
+ 
+ 
+ ...............................................................................................
+ 
+ 
+ Hi All,
+
+Please find below list of pending tasks so far:
+
+1.	Multi module maven project for Heroku
+2.	LDAP Integration(for Login)
+3.	Log4j Setup(for logging)
+4.	Project profile setup for Dev, Test and Production environment.(config-server)
+5.	Internationalization setup/I18N(For messages).
+6.	Test cases preparation.
+7.	OAutho2 Spring security setup to secure micro services.
+8.	AWS(Amazon Web Services) Integration.
+9.	Zuul(https://github.com/Netflix/zuul/wiki):  handles all incoming requests. It is used in combination with other Netflix components like Ribbon and Hystrix to provide a flexible and resilient routing tier for services
+10.	Hystrix Dashboard(https://github.com/Netflix/Hystrix/wiki/Dashboard): The Hystrix Dashboard allows you to monitor Hystrix metrics in real time.
+11.	Caching Implementation: https://github.com/Netflix/EVCache
+Ribbon:(https://github.com/Netflix/ribbon):
+Ribbon is a client side IPC library that is battle-tested in cloud. It provides the following features
+i.	Load balancing
+ii.	Fault tolerance
+iii.	Multiple protocol (HTTP, TCP, UDP) support in an asynchronous and reactive model
+iv.	Caching and batching
+12.	Feign:  makes writing java http clients easier(https://github.com/Netflix/feign)
+
+Regards,
+Sunil Soni
+
+
+.............................................
+
+11 may
+
+Log management
+
+https://elements.heroku.com/addons/papertrail 
+
+...................................................................................................
+
+
+https://github.com/heroku/devcenter-java-web-worker 
+https://devcenter.heroku.com/articles/asynchronous-web-worker-model-using-rabbitmq-in-java 
+https://github.com/amitjava535/devcenter-java-web-worker.git
+
+
+.................................................................................................
+
+CLOUDAMQP_URL-amqp://cyadava7:Test1!@10.10.5.18:8080 
+amqp://cyadava7:Test1!@ec2.clustername.cloudamqp.com/vhost
+amqp://cyadava7:Test1!@10.10.5.18:8080 
+http://cyadava7:Test1!@10.10.5.18:8080 
+
+CLOUDAMQP_URL-amqp://cyadava7:Test1!@ec2.clustername.cloudamqp.com/vhost
+set CLOUDAMQP_URL=http://cyadava7:Test1!@10.10.5.18:8080
+
+CLOUDAMQP_URL-amqp://cyadava7:Test1!@ec2.clustername.cloudamqp.com/vhost
+
+CLOUDAMQP_URL-amqp://cyadava7:Test1!@10.10.5.18:8080
+CLOUDAMQP_URL-http://cyadava7:Test1!@10.10.5.18:8080
+https://cyadava7:Test1!@multiamit1.herokuapp.com 
+CLOUDAMQP_URL-amqp://cyadava7:Test1!@multiamit1.herokuapp.com 
+
+
+
+sunil.kumar.soni@jci.com
+sunil@heroku0102
+
+jci-be
+
+
+
+
+
+
+
